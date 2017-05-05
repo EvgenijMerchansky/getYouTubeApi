@@ -1,0 +1,64 @@
+$common-margin: 40px;
+$common-padding: 40px;
+$common-border: solid 1px #f9f9f9;
+$hover-border: solid 1px #eee;
+$common-font-f: 'Roboto', sans-serif;
+$common-color: #828282;
+
+.block__title{
+  min-width: 320px;
+  text-align: center;
+  margin: $common-margin;
+  padding: $common-padding;
+  background-color: #fdfdfd;
+  border: $common-border;
+  transition: all .75s;
+  font-family: $common-font-f;
+  font-weight: 100;
+
+  &:hover{
+    border: $hover-border;
+  }
+
+  @media screen and (max-width: 992px) {
+    margin: 0;
+    padding: 40px;
+    font-size: 35px;
+  }
+
+  &-title{
+    color: $common-color;
+  }
+
+  &-subtitle{
+    text-decoration: none;
+    border: solid 3px #f9f9f9;
+    border-radius: 35px;
+    width: 300px;
+    padding: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    @media screen and (max-width: 992px) {
+      width: auto;
+      font-size: 55px;
+    }
+
+    &:hover{
+      border: solid 3px #ccc;
+      color: #458a2f;
+    }
+
+    &-item{
+      color: $common-color;
+      text-decoration: none;
+
+      &:hover{
+        color: #458a2f;
+      }
+
+    }
+
+  }
+
+}
