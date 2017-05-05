@@ -17,9 +17,11 @@ module.exports = {
 			{
 				test: /\.jsx?$/,
 				exclude: '/node_modules/',
-				use: [
-					'babel-loader'
-				]
+				loader: 'babel-loader',
+				query:
+		      {
+		        presets:['react']
+		      }
 			},
 			{
 				test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,

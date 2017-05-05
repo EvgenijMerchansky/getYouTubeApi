@@ -11,13 +11,15 @@ import RegionCenter from './app/containers/regionCenter.jsx';
 class App extends React.Component{
   render(){
     return(
-      <Router>
-        <div>
-          <Route exact path='/' component={Subclass}/>
-          <Route path='/offices' component={Offices}/>
-          <Route path='/offices/region' component={RegionCenter}/>
-        </div>
-      </Router>
+      <div>
+        <Router>
+          <div>
+            <Route exact path='/' component={Subclass}/>
+            <Route path='/offices' component={Offices}/>
+            <Route path='/offices/region' component={RegionCenter}/>
+          </div>
+        </Router>
+      </div>
     )
   }
 }

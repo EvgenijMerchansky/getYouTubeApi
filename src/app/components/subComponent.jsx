@@ -5,7 +5,7 @@ import styles from './subComponent.scss';
 function Subclass(props) {
   return(
     <div className='block__title'>
-      <h1 className='block__title-title'>PrivatBank Search Offices</h1>
+      <h1 className='block__title-title'>GET API YouTube</h1>
       <h2 className='block__title-subtitle'>
         <Link className='block__title-subtitle-item' to="/offices">Найти отделение</Link>
       </h2>
