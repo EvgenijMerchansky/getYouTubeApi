@@ -10,9 +10,11 @@ import styles from './office.scss';
 class Offices extends React.Component{
   render(){
     console.log(this);
+    const listItem = this.props.queryReducer.info
     return(
       <div className='item__container'>
         <input ref={(input) => {this.inputValue = input}} type='text' id='some'/><button onClick={(e) => this.props.query(this.inputValue.value)} type='button'>Search</button>
+        <div>{listItem}</div>
       </div>
     )
   }
