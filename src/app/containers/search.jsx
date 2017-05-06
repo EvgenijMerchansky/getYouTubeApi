@@ -1,15 +1,11 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import { query } from '../actions-generators/someAction';
-// import * as constants from '../constants/constants';
-import styles from './office.scss';
+import { query } from '../actions-generators/singleAction';
 
-class Offices extends React.Component{
+class Search extends React.Component{
   render(){
-    console.log(this);
     const listItem = this.props.queryReducer.info
     return(
       <div className='item__container'>
@@ -32,4 +28,4 @@ function MapDispatchToProps(dispatch) {
   },dispatch)
 }
 
-export default connect(officesState,MapDispatchToProps)(Offices)
+export default connect(officesState,MapDispatchToProps)(Search)
