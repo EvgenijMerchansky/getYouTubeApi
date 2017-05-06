@@ -15,7 +15,7 @@ class VideoPage extends React.Component{
       if(location == elemId){
         return(
           <div key={index}>
-            <iframe type="text/html" width="640" height="360" src={`http://www.youtube.com/embed/${elemId}`} frameBorder="1" allowFullScreen/>
+            <iframe type="text/html" width="640" height="360" src={`http://www.youtube.com/embed/${elemId}`} frameBorder="0" allowFullScreen/>
           </div>
         )
       }

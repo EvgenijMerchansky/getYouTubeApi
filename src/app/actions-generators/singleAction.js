@@ -25,7 +25,6 @@ export const query = (arg) => {
             <div key={index}>
               <img src={elem.snippet.thumbnails.default.url}/>
               <Link to={`/video-list/video/:${elem.id.videoId}`}>{elem.snippet.title}</Link>
-
             </div>
           )
         })
