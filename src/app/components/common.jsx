@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+import styles from './common.scss';
+
 function CommonPage(props) {
   return(
     <div className='block__title'>

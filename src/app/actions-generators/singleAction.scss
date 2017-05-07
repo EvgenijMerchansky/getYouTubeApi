@@ -1,4 +1,4 @@
-.list__element{
+.list{
   padding: 20px;
   width: auto;
   margin: 10px 0;
@@ -6,27 +6,19 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  // justify-content: space-around;
   flex-wrap: wrap;
+  border: solid 1px #cc181e;
 
-  &-img{
-    display: block;
-    height: inherit;
+  &__img{
+    border: solid 1px #cc181e;
   }
 
-
-  &-text{
-    display: block;
-
-    &-btn{
-
-    }
-
-    &-text{
-
-
-    }
-
+  &__link{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #cc181e;
+    text-decoration: none;
+    padding: 0 20px;
   }
 
 }

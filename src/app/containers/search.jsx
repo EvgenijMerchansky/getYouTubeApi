@@ -2,6 +2,8 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import styles from './search.scss';
+
 import { query } from '../actions-generators/singleAction';
 
 class Search extends React.Component{
@@ -9,7 +11,7 @@ class Search extends React.Component{
     const listItem = this.props.queryReducer.info
     return(
       <div className='item__container'>
-        <input ref={(input) => {this.inputValue = input}} type='text' id='some'/><button onClick={(e) => this.props.query(this.inputValue.value)} type='button'>Search</button>
+        <input ref={(input) => {this.inputValue = input}} placeholder='Search' type='text' id='some'/><button onClick={(e) => this.props.query(this.inputValue.value)} type='button'>Search</button>
         <div>{listItem}</div>
       </div>
     )

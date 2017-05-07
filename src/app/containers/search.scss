@@ -1,0 +1,39 @@
+.item__container{
+
+  input{
+    width: 600px;
+    height: 40px;
+    border: solid 1px #ccc;
+    border-radius: 35px;
+    padding: 10px 20px;
+    font-size: 17px;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+
+    &:hover{
+      border: solid 1px #cc181e;
+    }
+
+  }
+
+  button{
+    width: 100px;
+    height: 40px;
+    border-radius: 35px;
+    font-size: 17px;
+    background-color: #cc181e;
+    color: #fff;
+    outline: none;
+    border: none;
+    margin-bottom: 2px;
+    cursor: pointer;
+    margin: 0 10px;
+    font-family: 'Roboto', sans-serif;
+
+    &:hover{
+      background-color: #b1090f;
+    }
+
+  }
+
+}
