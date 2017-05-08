@@ -8,7 +8,6 @@ class VideoPage extends React.Component{
   render(){
     const listItem = this.props.RegionCenterReducer.info
     const wrappedItem = listItem.map((elem,index) => {
-      console.log(elem)
       const elemId = elem.props.children[1].props.to.substr(19,12);
       const location = this.props.location.pathname.substr(19,12);
 
