@@ -8,7 +8,6 @@ import { query } from '../actions-generators/singleAction';
 
 class Search extends React.Component{
   render(){
-    console.log(this);
     const listItem = this.props.queryReducer.info
     return(
       <div className='item__container'>
