@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import styles from './singleAction.scss';
 
+
 export const query = (arg) => {
   return function(dispatch){
     const q = arg;
@@ -22,8 +23,6 @@ export const query = (arg) => {
     }).then(response => {
         const itemData = response.data.items;
         const wrappedData = itemData.map((elem,index) => {
-          console.log(elem);
-          const basicPath = `http://www.youtube.com/embed/${elem.id.videoId}`
           return (
             <div className='list' key={index}>
               <img className='list__img' src={elem.snippet.thumbnails.default.url}/>
