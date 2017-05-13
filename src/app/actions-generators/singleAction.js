@@ -1,9 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import styles from './singleAction.scss';
-
 
 export const query = (arg) => {
   return function(dispatch){
@@ -21,18 +19,9 @@ export const query = (arg) => {
         maxResults: 10
       }
     }).then(response => {
-        const itemData = response.data.items;
-        const wrappedData = itemData.map((elem,index) => {
-          return (
-            <div className='list' key={index}>
-              <img className='list__img' src={elem.snippet.thumbnails.default.url}/>
-              <Link className='list__link' to={`/video-list/video/:${elem.id.videoId}`}>{elem.snippet.title}</Link>
-            </div>
-          )
-        })
       dispatch({
         type: 'ADD_VALUE',
-        payload: wrappedData
+        payload: response.data.items
       })
     })
   }

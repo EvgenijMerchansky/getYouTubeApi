@@ -6,11 +6,13 @@ import styles from './video.scss';
 
 class VideoPage extends React.Component{
   render(){
+    console.log(this);
     const listItem = this.props.RegionCenterReducer.info
     const wrappedItem = listItem.map((elem,index) => {
-      const elemId = elem.props.children[1].props.to.substr(19,12);
-      const location = this.props.location.pathname.substr(19,12);
 
+      const elemId = elem.id.videoId;
+      const location = this.props.location.pathname.substr(19,12);
+      
       if(location == elemId){
         return(
           <div key={index}>

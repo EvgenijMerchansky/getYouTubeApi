@@ -1,6 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import styles from './search.scss';
 
@@ -8,11 +9,20 @@ import { query } from '../actions-generators/singleAction';
 
 class Search extends React.Component{
   render(){
-    const listItem = this.props.queryReducer.info
+    // console.log(this);
+    const listItem = this.props.queryReducer.info;
+    const wrapped = listItem.map((elem, index) => {
+      return (
+        <div className='list' key={index}>
+          <img className='list__img' src={elem.snippet.thumbnails.default.url}/>
+          <Link className='list__link' to={`/video-list/video/:${elem.id.videoId}`}>{elem.snippet.title}</Link>
+        </div>
+      )
+    })
     return(
       <div className='item__container'>
         <input ref={(input) => {this.inputValue = input}} placeholder='Search' type='text' id='some'/><button onClick={(e) => this.props.query(this.inputValue.value)} type='button'>Search</button>
-        <div>{listItem}</div>
+        <div>{wrapped}</div>
       </div>
     )
   }
