@@ -16,7 +16,7 @@ class Search extends React.Component{
         <div className='list' key={index}>
           <img className='list__img' src={elem.snippet.thumbnails.default.url}/>
           <Link className='list__link' to={`/video-list/video/:${elem.id.videoId}`}>{elem.snippet.title}</Link>
-          <button onClick={() => this.props.deleteItem(elem.id)}>delete</button>
+          <button className='list__delete' onClick={() => this.props.deleteItem(elem.id)}>delete</button>
         </div>
       )
     })
@@ -24,7 +24,6 @@ class Search extends React.Component{
       <div className='item__container'>
         <input ref={(input) => {this.inputValue = input}} placeholder='Search' type='text' id='some'/><button onClick={(e) => this.props.query(this.inputValue.value)} type='button'>Search</button>
         <div>{wrapped}</div>
-
       </div>
     )
   }
