@@ -5,17 +5,18 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import styles from './search.scss';
 
-import { query } from '../actions-generators/singleAction';
+import { query, deleteItem } from '../actions-generators/singleAction';
 
 class Search extends React.Component{
   render(){
-    // console.log(this);
+    console.log(this);
     const listItem = this.props.queryReducer.info;
     const wrapped = listItem.map((elem, index) => {
       return (
         <div className='list' key={index}>
           <img className='list__img' src={elem.snippet.thumbnails.default.url}/>
           <Link className='list__link' to={`/video-list/video/:${elem.id.videoId}`}>{elem.snippet.title}</Link>
+          <button onClick={() => this.props.deleteItem(elem.id)}>delete</button>
         </div>
       )
     })
@@ -23,6 +24,7 @@ class Search extends React.Component{
       <div className='item__container'>
         <input ref={(input) => {this.inputValue = input}} placeholder='Search' type='text' id='some'/><button onClick={(e) => this.props.query(this.inputValue.value)} type='button'>Search</button>
         <div>{wrapped}</div>
+
       </div>
     )
   }
@@ -36,7 +38,8 @@ function officesState(state) {
 
 function MapDispatchToProps(dispatch) {
   return bindActionCreators({
-    query
+    query,
+    deleteItem
   },dispatch)
 }
 

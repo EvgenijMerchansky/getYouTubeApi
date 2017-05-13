@@ -26,3 +26,13 @@ export const query = (arg) => {
     })
   }
 }
+
+export const deleteItem = (id) => {
+    // console.log(id);
+  return function(dispatch){
+    dispatch({
+      type: 'DELETE_ITEM',
+      payload: id
+    })
+  }
+}
